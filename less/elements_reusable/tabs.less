@@ -1,0 +1,19 @@
+.tabs {
+    display: flex;    
+    &__item {
+        background-color: #ebeef5;
+        border: 2px solid #a2b2da;
+        color: #a2b2da;
+        font-size: 20px;
+        padding: 13px 17px;
+        border-radius: 100px;
+        margin: 12px 12px 0 0;
+        cursor: pointer;
+
+        &.active {
+            background-color: #52bead;
+            border-color: #52bead;
+            color: @white;
+        }
+    }
+}

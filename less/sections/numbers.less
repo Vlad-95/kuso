@@ -1,0 +1,125 @@
+.numbers {
+    padding: 72px 0 41px;
+    background-color: @black;
+
+    &__wrap {
+        display: flex;
+    }
+
+    &__item {
+        text-align: center;
+        width: calc(100% / 6);
+
+        .number {
+            fill: url(#p-fire);
+            stroke: #ffbe00;
+            stroke-width: 3;
+            stroke-opacity: 0.3;
+            font-size: 85px;
+            font-weight: 900;
+        }
+
+        .name {
+            font-size: 10px;
+            text-transform: lowercase;
+            font-weight: 900;
+            color: @white;
+            margin: 13px 0 12px;
+            text-transform: uppercase;
+        }
+
+        .descr {
+            color: @white;
+            margin: 0;
+            text-transform: lowercase;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 0 35px;
+        }
+    }
+
+    
+}
+
+
+@media screen and (max-width: 1200px) {
+    .numbers {
+        padding: 55px 0;
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .numbers {
+        padding: 55px 0;
+
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__canvas {
+            position: relative;
+            height: 150px;
+            
+            &:before {
+                left: 0;
+                top: 0;
+                right: 0;
+                margin: auto;
+                color: @green;
+                font-size: 150px;
+                font-weight: 700;
+                text-shadow: none;
+            }
+        }
+
+        &__text {
+            margin-top: 0;
+        }
+        
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .numbers {
+        padding: 30px 0;
+
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__canvas {
+            height: 100px;
+            
+            &:before {                
+                font-size: 100px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .numbers {
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+        }
+
+        &__canvas {
+            height: 150px;
+            
+            &:before {                
+                font-size: 150px;
+            }
+        }
+        
+    }
+}
