@@ -82,9 +82,25 @@ $(document).ready(function() {
             arrows: true
         });
 
-        // $('.js-gallery').on('edge', function(event, slick, direction){
-        //     console.log('edge was hit')
-        // });
+        
+
+        $('.js-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            let slideCount = $('.js-gallery .slick-slide').length;
+
+            if (nextSlide == (slideCount - 1)) {
+                $('.js-gallery .slick-next').addClass('last-slide')
+            } else {
+                $('.js-gallery .slick-next').removeClass('last-slide')
+            }
+
+            if (nextSlide == 0) {
+                $('.js-gallery .slick-prev').removeClass('first-slide')
+            } else {
+                $('.js-gallery .slick-prev').addClass('first-slide')
+            }
+            console.log(slideCount)
+            console.log(nextSlide);
+        });
 
         
     }
