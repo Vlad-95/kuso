@@ -10,7 +10,10 @@
     }
 
     .logo {
-        max-width: 185px;
+        svg {
+            width: 185px;
+            height: 53px;
+        }
     }
 
     .nav {
@@ -31,8 +34,6 @@
 
     .phone {
         color: @lightBlue;
-        font-weight: 700;
-        font-size: 25px;
         text-align: right;
         align-self: flex-start;
 
@@ -40,6 +41,7 @@
             font-size: 12px;
             font-weight: 400;
             display: block;
+            margin-bottom: 8px;
         }
 
         .link {
@@ -85,7 +87,7 @@
     }
 
     .burger {
-        position: absolute;
+        position: relative;
         display: none;
         right: 0;
         top: 0;
@@ -97,7 +99,7 @@
         &:before {
             content: '';
             position: absolute;
-            box-shadow: 0 0 0 0 @green;
+            box-shadow: 0 0 0 0 @darkBlue;
             transition: 1s;
             width: 2px;
             height: 2px;
@@ -112,7 +114,7 @@
 
         &.active {
             &:before {
-                box-shadow: 0 0 0 5000px @green;
+                box-shadow: 0 0 0 5000px @darkBlue;
             }
 
             span {
@@ -143,7 +145,7 @@
             margin: auto;
             width: 100%;
             height: 3px;
-            background-color: @green;
+            background-color: @darkBlue;
             display: block;
             border-radius: 100px;
             transition: 0.5s;
@@ -210,43 +212,64 @@
 
 @media screen and (max-width: 1200px) {
     .header {
-        &__wrap {
-            grid-template-columns: 238px auto 150px;
-        }
+        padding: 20px 0;
 
-        .logos {
-            .logo_big {
-                svg {
-                    width: 130px;
-                    height: 95px;
-                }
+        .logo {
+            svg {
+                width: 120px;
+                height: 34px;
             }
         }
 
         .nav {
             &__item {
-                font-size: 15px;
+                font-size: 12px;
+                font-weight: 400;
             }
         }
 
         .phone {
-            font-size: 20px;
-            margin-top: -12px;
+            .time {
+                font-size: 12px;
+                line-height: 1;
+                margin-bottom: -2px;
+            }
+
+            .link {
+                font-weight: 600;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+        }
+
+        .lang {
+            
+            &__item {
+                font-size: 12px;
+                font-weight: 600;
+            }
         }
     }
 }
 
 @media screen and (max-width: 992px) {
     .header {
-        &__wrap {
-            grid-template-columns: auto;
-        }
-
+        
         .nav {
             display: none;
         }
 
         .phone {
+            margin-left: auto;
+            margin-right: 15px;
+            align-self: center;
+
+            .time {
+                margin-bottom: 0;
+            }
+        }
+
+        .lang {
             display: none;
         }
 
@@ -258,25 +281,8 @@
 
 @media screen and (max-width: 576px) {
     .header {
-        .logos {
-            align-self: center;
-            display: flex;
-            align-items: flex-start;
-    
-            .logo_big {
-                svg {
-                    width: 110px;
-                    height: 80px;
-                }
-            }
-    
-            .logo_small {
-                margin-top: 0;
-                svg {
-                   width: 95px;
-                   height: 23px;
-                }
-            }
+        .phone {
+            display: none;
         }
     }
 }
