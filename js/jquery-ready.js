@@ -6,6 +6,7 @@ $(document).ready(function() {
     let headerWrap = $('.header__wrap');
     let nav = header.find('.nav');
     let phone = header.find('.phone');
+    let lang = header.find('.lang')
     let burger = $('.burger');
     let windowHeight = $(window).height();
 
@@ -19,9 +20,11 @@ $(document).ready(function() {
         //клонируем элементы хедера
         let mobileNav = nav.clone();
         let mobilePhone = phone.clone();
+        let mobileLang = lang.clone();
 
         mobileMenu.append(mobileNav);
-        mobileMenu.append(mobilePhone);        
+        mobileMenu.append(mobilePhone);  
+        mobileMenu.append(mobileLang);        
     }
 
     function showMenu() {
@@ -35,6 +38,13 @@ $(document).ready(function() {
     burger.click(showMenu);
 
     //============Мобильное меню (КОНЕЦ)
+
+    //====Переключалка языков======
+    $('.lang__toggle').click(function() {
+        $(this).toggleClass('active');
+        $('.lang__content').slideToggle();
+    })
+    //====Переключалка языков КОНЕЦ======
 
     //=====Якорные ссылки====
     function anchorLinks () {
