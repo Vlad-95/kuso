@@ -18,10 +18,10 @@
                 </a>
 
                 <nav class="nav">
-                    <a href="javascript:;" data-anchor="info" class="nav__item">Метод каталитического окисления осадка</a>
-                    <a href="javascript:;" data-anchor="feedback" class="nav__item">Технология</a>
-                    <a href="javascript:;" data-anchor="feedback" class="nav__item">Установка</a>
-                    <a href="javascript:;" data-anchor="feedback" class="nav__item">Команда</a>
+                    <a href="javascript:;" data-anchor="numbers" class="nav__item">Метод каталитического окисления осадка</a>
+                    <a href="javascript:;" data-anchor="technology" class="nav__item">Технология</a>
+                    <a href="javascript:;" data-anchor="install" class="nav__item">Установка</a>
+                    <a href="javascript:;" data-anchor="team" class="nav__item">Команда</a>
                     <a href="javascript:;" data-anchor="feedback" class="nav__item">Контакты</a>
                 </nav>
 
@@ -60,15 +60,15 @@
                     <h1 class="title">Каталитическая установка позволит решить проблему утилизации илового осадка и улучшить экосистему региона</h1>
 
                     <div class="btns">
-                        <a href="javascript:;" class="btns__item expert">Задать вопрос эксперту</a>
+                        <a href="javascript:;" data-tab="feedback_message" class="btns__item expert">Задать вопрос эксперту</a>
                         <a href="javascript:;" class="btns__item online">Онлайн-камера на площадке</a>
-                        <a href="javascript:;" class="btns__item visit">Посетить завод</a>
+                        <a href="javascript:;" data-tab="feedback_visit" class="btns__item visit">Посетить завод</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="numbers">
+        <section class="numbers" data-anchor="numbers">
             <div class="wrapper">
                 <div class="numbers__wrap" id="container">
                     <div class="numbers__item">
@@ -175,7 +175,7 @@
             </div>
         </section>
 
-        <section class="technology">
+        <section class="technology" data-anchor="technology">
             <div class="wrapper">
                 <h2 class="section-title fz40">Технология</h2>
 
@@ -363,7 +363,7 @@
             </div>
         </section>
 
-        <section class="install">
+        <section class="install" data-anchor="install">
             <div class="wrapper">
                 <div class="title-row">
                     <h2 class="section-title fz40">Установка</h2>
@@ -376,47 +376,144 @@
                 </div>
                 
                 <div class="install__item active">
-                    <div class="content">
-                        <h3 class="name">Первая очередь</h3>
-
-                        <div class="wysiwyg">
-                            <p>
-                                Количество носителя, как правило, гораздо больше количества нанесенного на него активного компонента. Основными требованиями к носителям являются большая площадь поверхности и пористость, термическая стабильность, химическая инертность, высокая механическая прочность.
-                            </p>
-
-                            <br>
-                            <br>
-
-                            <table>
-                                <tr>
-                                    <td>Установленная мощность (т/ч)</td>
-                                    <td><strong>6</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>Утилизация кека (т/год) </td>
-                                    <td><strong>51 000</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>Общая площадь объекта (м2) </td>
-                                    <td><strong>1 300</strong></td>
-                                </tr>
-                            </table>
+                    <div class="install__item-wrap">
+                        <div class="content">
+                            <h3 class="name">Первая очередь</h3>
+    
+                            <div class="wysiwyg">
+                                <p>
+                                    Количество носителя, как правило, гораздо больше количества нанесенного на него активного компонента. Основными требованиями к носителям являются большая площадь поверхности и пористость, термическая стабильность, химическая инертность, высокая механическая прочность.
+                                </p>
+    
+                                <br>
+                                <br>
+    
+                                <table>
+                                    <tr>
+                                        <td>Установленная мощность (т/ч)</td>
+                                        <td><strong>6</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Утилизация кека (т/год) </td>
+                                        <td><strong>51 000</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Общая площадь объекта (м2) </td>
+                                        <td><strong>1 300</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+    
+                        <div class="slider">
+                            <div class="js-slider">
+                                <div class="slider__item">
+                                    <img src="img/install-img.png" alt="">
+                                </div>
+                                <div class="slider__item">
+                                    <img src="img/install-bg.png" alt="">
+                                </div>
+                                <div class="slider__item">
+                                    <img src="img/install-img.png" alt="">
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
+                    
+                </div>
 
-                    <div class="slider">
-                        <div class="js-slider">
-                            <div class="slider__item">
-                                <img src="img/install-img.png" alt="">
-                            </div>
-                            <div class="slider__item">
-                                <img src="img/install-bg.png" alt="">
-                            </div>
-                            <div class="slider__item">
-                                <img src="img/install-img.png" alt="">
+                <div class="install__item">
+                    <div class="install__item-wrap">
+                        <div class="content">
+                            <h3 class="name">Вторая очередь</h3>
+    
+                            <div class="wysiwyg">
+                                <p>
+                                    Количество носителя, как правило, гораздо больше количества нанесенного на него активного компонента. Основными требованиями к носителям являются большая площадь поверхности и пористость, термическая стабильность, химическая инертность, высокая механическая прочность.
+                                </p>
+    
+                                <br>
+                                <br>
+    
+                                <table>
+                                    <tr>
+                                        <td>Установленная мощность (т/ч)</td>
+                                        <td><strong>6</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Утилизация кека (т/год) </td>
+                                        <td><strong>51 000</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Общая площадь объекта (м2) </td>
+                                        <td><strong>1 300</strong></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-                        
+    
+                        <div class="slider">
+                            <div class="js-slider">
+                                <div class="slider__item">
+                                    <img src="img/install-img.png" alt="">
+                                </div>
+                                <div class="slider__item">
+                                    <img src="img/install-bg.png" alt="">
+                                </div>
+                                <div class="slider__item">
+                                    <img src="img/install-img.png" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="install__item">
+                    <div class="install__item-wrap">
+                        <div class="content">
+                            <h3 class="name">Третья очередь</h3>
+    
+                            <div class="wysiwyg">
+                                <p>
+                                    Количество носителя, как правило, гораздо больше количества нанесенного на него активного компонента. Основными требованиями к носителям являются большая площадь поверхности и пористость, термическая стабильность, химическая инертность, высокая механическая прочность.
+                                </p>
+    
+                                <br>
+                                <br>
+    
+                                <table>
+                                    <tr>
+                                        <td>Установленная мощность (т/ч)</td>
+                                        <td><strong>6</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Утилизация кека (т/год) </td>
+                                        <td><strong>51 000</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Общая площадь объекта (м2) </td>
+                                        <td><strong>1 300</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+    
+                        <div class="slider">
+                            <div class="js-slider">
+                                <div class="slider__item">
+                                    <img src="img/install-img.png" alt="">
+                                </div>
+                                <div class="slider__item">
+                                    <img src="img/install-bg.png" alt="">
+                                </div>
+                                <div class="slider__item">
+                                    <img src="img/install-img.png" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -533,7 +630,7 @@
             </div>
         </section>
 
-        <section class="team">
+        <section class="team" data-anchor="team">
             <div class="wrapper">
                 <h2 class="section-title fz40">Команда</h2>
 
@@ -585,8 +682,8 @@
                             <h2 class="section-title fz30">Свяжитесь с нами</h2>
         
                             <div class="tabs tabs_feedback">
-                                <div class="tabs__item active">Сообщение</div>
-                                <div class="tabs__item">Визит на завод</div>
+                                <div class="tabs__item active" data-tab="feedback_message">Сообщение</div>
+                                <div class="tabs__item" data-tab="feedback_visit">Визит на завод</div>
                                 <!-- <div class="tabs__item">Опросный лист</div> -->
                             </div>
                         </div>
@@ -611,15 +708,30 @@
                                     </label>
                                 </div>
 
-                                <label class="form__item">
+                                <label class="form__item" data-tab="feedback_message">
                                     <p class="form__item-name">Название организации или адрес*</p>
                                     <input type="text" class="form__item-input">
                                 </label>
             
-                                <label class="form__item form__item_comment">
+                                <label class="form__item">
                                     <p class="form__item-name">Комментарий*</p>
                                     <textarea name="" id="" class="form__item-comment error"></textarea>
                                 </label>
+
+                                <div class="form__item file" data-tab="feedback_visit">
+                                    <div class="files-list">
+                                        
+                                    </div>
+                                    <label class="form__file">
+                                        <input type="file" multiple name="files">
+
+                                        <div class="icon">
+                                            <img src="img/icons/clip.png" alt="">
+                                        </div>
+
+                                        <div class="text"><span>Прикрепить файл</span> (паспорт, фото, согласие на обработку персональных данных — png, jpg, doc до 120kb)</div>
+                                    </label>
+                                </div>
                             </div>
             
                             <div class="form__footer">

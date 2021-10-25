@@ -67,6 +67,20 @@ $(document).ready(function() {
 
     //=====Якорные ссылки КОНЕЦ==
 
+    //=====табы в блоке УСТАНОВКА======
+    if ($('.install').length) {
+        $('.install .tabs').on('click', '.tabs__item:not(".active")', function() {
+           $(this).addClass('active').siblings().removeClass('active');
+
+           $(this).closest('.install').find('.install__item').eq($(this).index()).fadeIn().addClass('active').siblings('.install__item').hide().removeClass('active');
+
+
+           $('.install__item').find('.js-slider').slick('setPosition')
+
+        });
+    }
+    //=====табы в блоке УСТАНОВКА КОНЕЦ==============
+
     //=====Слайдеры в блоке УСТАНОВКА======
     if ($('.install .js-slider').length) {
         $('.install .js-slider').slick({
@@ -76,6 +90,8 @@ $(document).ready(function() {
         })
     }
     //=====Слайдеры в блоке УСТАНОВКА КОНЕЦ==============
+
+    
 
     //=====Слайдер Галерея=========
     if($('.gallery').length) {
@@ -132,4 +148,69 @@ $(document).ready(function() {
     }
 
     //=====Слайдер Галерея КОНЕЦ========
+
+    
+    //=====Табы в свяжитесь с нами=====
+    if ($('.feedback').length) {
+        $('.feedback .tabs').on('click', '.tabs__item:not(".active")', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+
+            $(this).closest('.install').find('.install__item').eq($(this).index()).fadeIn().addClass('active').siblings('.install__item').hide().removeClass('active');
+
+            
+            if ($(this).attr('data-tab') == "feedback_visit") {
+               $('.form__item[data-tab="feedback_message"]').hide().find('input, textarea').prop('disabled', true);
+               $('.form__item[data-tab="feedback_visit"]').show().find('input, textarea').prop('disabled', false);
+            } else if ($(this).attr('data-tab') == "feedback_message") {
+                $('.form__item[data-tab="feedback_visit"]').hide().find('input, textarea').prop('disabled', true);
+                $('.form__item[data-tab="feedback_message"]').show().find('input, textarea').prop('disabled', false);
+            }
+
+        });
+    }
+    //=====Табы в свяжитесь с нами КОНЕЦ======
+
+
+    //=====Показ имени файлов========
+    $('input[name="files"]').bind('change', function() {
+        
+        let filesName = [];
+        $('.files-list__item').remove();
+
+        console.log($(this).get(0).files)
+
+        for(var i = 0; i < $(this).get(0).files.length; ++i) { // Запускаем цикл и перебираем все файлы
+            filesName.push($(this).get(0).files[i].name); // Добавляем имена файлов в массив
+        } 
+
+        
+        filesName.forEach(function(item, index, array) {
+            let fileElement = $(document.createElement('div'));
+            let fileElementDel = $(document.createElement('div'));
+
+            fileElement.addClass('files-list__item');
+            fileElementDel.addClass('delete');
+
+            fileElement.text(item)
+            $('.files-list').append(fileElement);
+            fileElement.append(fileElementDel);
+        })
+        
+    })
+
+    //удаление файлов
+
+    $('.form__item.file').click(function(evt) {
+        let target = evt.target;
+        if ($(target).hasClass('delete')) {
+            console.log($(target).parent().index())
+            //$(target).parent().remove();
+
+            delete FileList[$(target).parent().index()]
+            console.log($('input[name="files"]').get(0).files)
+        }
+        
+    })
+
+    //=====Показ имени файлов КОНЕЦ=======
 });
