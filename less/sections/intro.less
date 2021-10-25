@@ -124,32 +124,11 @@
     .intro {
         height: 460px;
         
-        &__image {
-            .light-block {
-                height: 460px;
-                background: radial-gradient(circle farthest-corner at 50% 20%, rgba(111,188,188,0.5) 0, transparent 40%, transparent 50%);
-            }
-        }
-
         &__content {
-            padding-top: 160px;
+            padding-top: 60px;
 
             .title {
-                font-size: 70px;
-            }
-
-            .subtitle {
-                font-size: 25px;
-                margin: 25px 0 50px;
-            }
-
-            .intro__btn {
-                font-size: 20px;
-
-                &:after {
-                    width: 36px;
-                    height: 36px;
-                }
+                font-size: 50px;
             }
         }
     }
@@ -157,34 +136,22 @@
 
 @media screen and (max-width: 992px) {
     .intro {
-        min-height: 400px;
-        height: auto;
-        padding-bottom: 40px;
-
-        &__image {
-            .video {
-                display: none;
-            }
-            .light-block {
-                height: 100%;
-            }
-        }
+        height: 400px;
 
         &__content {
             .title {
-                font-size: 50px;
+                font-size: 35px;
             }
 
-            .subtitle {
-                font-size: 20px;
-            }
+            .btns {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
 
-            .intro__btn {
-                font-size: 17px;
-
-                &:after {
-                    width: 32px;
-                    height: 32px;
+                &__item {
+                    &:not(:last-of-type) {
+                        margin-bottom: 30px;
+                    }
                 }
             }
         }
@@ -192,5 +159,47 @@
 }
 
 @media screen and (max-width: 768px) {
+    .intro {
+        height: auto;
 
+        .wrapper {
+            height: auto;
+        }
+
+        &__content {
+            display: block;
+
+            .title {
+                font-size: 30px;
+            }
+
+            .btns {
+                margin-top: 60px;
+
+                &__item {
+                    font-size: 15px;
+
+                    &:before {
+                        top: -13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .intro {
+        &__content {
+            .title {
+                font-size: 25px;
+            }
+
+            .btns {
+                &__item {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
 }
