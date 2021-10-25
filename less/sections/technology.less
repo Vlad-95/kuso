@@ -460,10 +460,8 @@
 
                 &__item {
                     position: relative;
-
-                    &:not(:last-of-type) {
-                        margin-bottom: 20px;
-                    }
+                    margin-bottom: 30px;
+                    
 
                     .number {
                         position: absolute;
@@ -557,12 +555,26 @@
 
 @media screen and (max-width: 768px) {
     .technology {
+        padding: 30px 0 18px;
+
+        &__block {
+            padding-bottom: 0;
+
+            &:not(:first-of-type) {
+                padding-top: 30px;
+            }
+        }
+
         .wysiwyg {
             ul {
                 &.two-cols {
                     column-count: 1;
                 }
             }
+        }
+
+        .img-full {
+            
         }
     }
 }

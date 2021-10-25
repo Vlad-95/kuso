@@ -1,5 +1,6 @@
 .tabs {
-    display: flex;    
+    display: flex; 
+
     &__item {
         background-color: #ebeef5;
         border: 2px solid #a2b2da;
@@ -23,6 +24,16 @@
         flex-wrap: wrap;
 
         &__item {
+            font-size: 17px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tabs {
+        &__item {
+            margin: 6px 6px 0 0;
+            padding: 10px 16px;
             font-size: 17px;
         }
     }

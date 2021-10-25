@@ -138,6 +138,8 @@
 
 @media screen and (max-width: 992px) {
     .modules {
+        padding: 50px 0 70px;
+
         &__item {           
             .wysiwyg {
                 .name {
@@ -150,8 +152,14 @@
 
 @media screen and (max-width: 768px) {
     .modules {
+        padding: 30px 0;
+
         &__item {          
             display: block;
+
+            &:not(:last-of-type) {
+                margin-bottom: 60px;
+            }
 
             .img {
                 margin-bottom: 20px;
