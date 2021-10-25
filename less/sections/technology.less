@@ -315,3 +315,254 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .technology {
+
+        .wysiwyg {
+            p,
+            li {
+                font-size: 15px;
+            }
+
+            table {
+                font-size: 15px;
+            }
+        }
+
+        .img-full {
+            width: 963px;
+            margin: 0 auto;
+
+            .dots {
+                &__item {
+                    &:nth-of-type(1) {
+                        top: 150px;
+                        left: 28px;
+                    }
+
+                    &:nth-of-type(2) {
+                        top: 235px;
+                        left: 74px;
+                    }
+
+                    &:nth-of-type(3) {
+                        top: 47px;
+                        left: 214px;
+                    }
+
+                    &:nth-of-type(4) {
+                        top: 296px;
+                        left: 172px;
+                    }
+
+                    &:nth-of-type(5) {
+                        top: 215px;
+                        left: 330px;
+                    }
+
+                    &:nth-of-type(6) {
+                        top: 350px;
+                        left: 417px;
+                    }
+
+                    &:nth-of-type(7) {
+                        top: 318px;
+                        left: 512px;
+                    }
+
+                    &:nth-of-type(8) {
+                        top: 0;
+                        left: 448px;
+                    }
+
+                    &:nth-of-type(9) {
+                        top: 0;
+                        left: 565px;
+                    }
+
+                    &:nth-of-type(10) {
+                        top: -6px;
+                        left: 708px;
+                    }
+
+                    &:nth-of-type(11) {
+                        top: 190px;
+                        left: 709px;
+                    }
+
+                    &:nth-of-type(12) {
+                        top: 90px;
+                        left: 793px;
+                    }
+
+                    &:nth-of-type(13) {
+                        top: 195px;
+                        left: 912px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .technology {
+        &__block {
+            flex-direction: column;
+
+            &.img-right {
+
+                .wysiwyg {
+                    order: 2;
+                    padding-right: 0;
+                }
+    
+                .img {
+                    order: 1;
+                    text-align: left;
+                    margin-bottom: 20px;
+                }
+            }
+    
+            &.img-left {
+    
+                .wysiwyg {
+                    order: 2;
+                    padding-left: 0;
+                }
+    
+                .img {
+                    order: 1;
+                    text-align: left;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .wysiwyg {
+            width: 100%;
+        }
+
+        .img {
+            width: 100%;
+        }
+
+        .img-full {
+            width: 100%;
+
+            img {
+                display: none;
+            }
+
+            .dots {
+                position: static;
+
+                &__item {
+                    position: relative;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 20px;
+                    }
+
+                    .number {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+
+                    .content {
+                        opacity: 1;
+                        visibility: visible;
+                        position: static;
+                        box-shadow: none;
+                        min-width: auto;
+                        max-width: 100%;
+                        padding: 11px 0 0 50px;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-of-type(1) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(2) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(3) {
+                        top: 0;
+                        left: 0;
+                    }
+                    
+                    &:nth-of-type(4) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(5) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(6) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(7) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(8) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(9) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(10) {
+                        top: -0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(11) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(12) {
+                        top: 0;
+                        left: 0;
+                    }
+    
+                    &:nth-of-type(13) {
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .technology {
+        .wysiwyg {
+            ul {
+                &.two-cols {
+                    column-count: 1;
+                }
+            }
+        }
+    }
+}

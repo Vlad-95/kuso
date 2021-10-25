@@ -69,17 +69,28 @@ $(document).ready(function() {
 
     //=====Слайдер Галерея=========
     if($('.gallery').length) {
-        // проверка на инициализацию работает только перед привязки слайдера
-        $('.js-gallery').on('init', function(event, slick){
-            console.log('init');
-        });
-
         $('.js-gallery').slick({
             dots: false,
             slidesToShow: 1,
             variableWidth: true,
             infinite: false,
-            arrows: true
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 993,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 2,
+                        infinite: true
+                    }
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
         });
 
         
@@ -87,19 +98,21 @@ $(document).ready(function() {
         $('.js-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide){
             let slideCount = $('.js-gallery .slick-slide').length;
 
-            if (nextSlide == (slideCount - 1)) {
-                $('.js-gallery .slick-next').addClass('last-slide')
-            } else {
-                $('.js-gallery .slick-next').removeClass('last-slide')
+            if ($(window).width() >= 993) {
+                if (nextSlide == (slideCount - 1)) {
+                    $('.js-gallery .slick-next').addClass('last-slide')
+                } else {
+                    $('.js-gallery .slick-next').removeClass('last-slide')
+                }
+    
+                if (nextSlide == 0) {
+                    $('.js-gallery .slick-prev').removeClass('first-slide')
+                } else {
+                    $('.js-gallery .slick-prev').addClass('first-slide')
+                }
             }
-
-            if (nextSlide == 0) {
-                $('.js-gallery .slick-prev').removeClass('first-slide')
-            } else {
-                $('.js-gallery .slick-prev').addClass('first-slide')
-            }
-            console.log(slideCount)
-            console.log(nextSlide);
+            
+            
         });
 
         

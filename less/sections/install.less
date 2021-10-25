@@ -10,10 +10,6 @@
 
     .tabs {
         margin-left: 33px;
-
-        &__item {
-            
-        }
     }
 
     &__item {
@@ -185,3 +181,41 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .install {
+        
+
+        &__item {
+            .content {
+                padding-right: 50px;
+            }
+
+            .slider {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .install {
+        .tabs {
+            margin-left: 0;
+        }
+
+        &__item {
+            display: block;
+
+            .content {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .slider {
+                width: 100%;
+            }
+        }
+    }
+} 

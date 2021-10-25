@@ -119,3 +119,53 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .modules {
+        &__item {
+            .img {
+                width: 40%;
+                padding-right: 0;
+            }
+
+            .wysiwyg {
+                width: 60%;
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .modules {
+        &__item {           
+            .wysiwyg {
+                .name {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modules {
+        &__item {          
+            display: block;
+
+            .img {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .wysiwyg {
+                padding-left: 0;
+                width: 100%;
+
+                .name {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

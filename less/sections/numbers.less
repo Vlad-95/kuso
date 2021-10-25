@@ -46,80 +46,37 @@
     .numbers {
         padding: 55px 0;
 
-        &__text {
-            font-size: 20px;
-        }
+        
     }
 }
 
 @media screen and (max-width: 992px) {
     .numbers {
-        padding: 55px 0;
+        padding: 55px 0 25px;
 
         &__wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        &__canvas {
-            position: relative;
-            height: 150px;
-            
-            &:before {
-                left: 0;
-                top: 0;
-                right: 0;
-                margin: auto;
-                color: @green;
-                font-size: 150px;
-                font-weight: 700;
-                text-shadow: none;
-            }
-        }
-
-        &__text {
-            margin-top: 0;
+            flex-wrap: wrap;
         }
         
+        &__item {
+            width: calc(100% / 3);
+            margin-bottom: 30px;
+        }
     }
 }
 
 
 @media screen and (max-width: 768px) {
     .numbers {
-        padding: 30px 0;
-
-        &__wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        &__canvas {
-            height: 100px;
-            
-            &:before {                
-                font-size: 100px;
-            }
-        }
+        padding: 30px 0 5px;
         
     }
 }
 
 @media screen and (max-width: 576px) {
     .numbers {
-        &__wrap {
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 40px;
+        &__item {
+            width: calc(100% / 2);
         }
-
-        &__canvas {
-            height: 150px;
-            
-            &:before {                
-                font-size: 150px;
-            }
-        }
-        
     }
 }
