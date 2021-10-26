@@ -20,6 +20,10 @@
             padding-top: 66px;
         }
 
+        &.chain {
+            padding-bottom: 104px;
+        }
+
         &.not-flex {
             display: block;
         }
@@ -319,10 +323,17 @@
 @media screen and (max-width: 1200px) {
     .technology {
 
+        &__block {
+            &.chain {
+                padding-bottom: 75px;
+            }
+        }
+
         .wysiwyg {
             p,
             li {
                 font-size: 15px;
+                line-height: 1.5;
             }
 
             table {
@@ -411,6 +422,10 @@
         &__block {
             flex-direction: column;
 
+            &.chain {
+                padding-bottom: 45px;
+            }
+
             &.img-right {
 
                 .wysiwyg {
@@ -438,6 +453,7 @@
                     margin-bottom: 20px;
                 }
             }
+            
         }
 
         .wysiwyg {
@@ -562,6 +578,10 @@
 
             &:not(:first-of-type) {
                 padding-top: 30px;
+            }
+
+            &.chain {
+                padding-bottom: 12px;
             }
         }
 

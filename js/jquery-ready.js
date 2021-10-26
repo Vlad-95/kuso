@@ -40,10 +40,13 @@ $(document).ready(function() {
     //============Мобильное меню (КОНЕЦ)
 
     //====Переключалка языков======
-    $('.lang__toggle').click(function() {
-        $(this).toggleClass('active');
-        $('.lang__content').slideToggle();
-    })
+    if ($(window).width() >= 992) {
+        $('.lang').click(function() {
+            $(this).find('.lang__toggle').toggleClass('active');
+            $('.lang__content').slideToggle();
+        })
+    }
+    
     //====Переключалка языков КОНЕЦ======
 
     //=====Якорные ссылки====
