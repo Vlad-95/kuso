@@ -189,45 +189,39 @@ $(document).ready(function() {
 
 
     //=====Показ имени файлов========
-    // $('input[name="files"]').bind('change', function() {
+    $('.form').on('change', 'input[type="file"]', function() {
+        console.log(1)
+        //$('.files-list__item').remove();
+        let fileName = $(this)[0].files[0].name;
+        let clone = $(this).closest('.form__file').clone();
         
-    //     let filesName = [];
-    //     $('.files-list__item').remove();
+        let fileElement = $(document.createElement('div'));
+        let fileElementDel = $(document.createElement('div'));
 
-    //     console.log($(this).get(0).files)
+        fileElement.addClass('files-list__item');
+        fileElementDel.addClass('delete');
+        fileElement.attr('data-count', $('.form__file').length)
 
-    //     for(var i = 0; i < $(this).get(0).files.length; ++i) { // Запускаем цикл и перебираем все файлы
-    //         filesName.push($(this).get(0).files[i].name); // Добавляем имена файлов в массив
-    //     } 
-
+        fileElement.text(fileName);
+        $('.files-list').append(fileElement);
+        fileElement.append(fileElementDel);
         
-    //     filesName.forEach(function(item, index, array) {
-    //         let fileElement = $(document.createElement('div'));
-    //         let fileElementDel = $(document.createElement('div'));
-
-    //         fileElement.addClass('files-list__item');
-    //         fileElementDel.addClass('delete');
-
-    //         fileElement.text(item)
-    //         $('.files-list').append(fileElement);
-    //         fileElement.append(fileElementDel);
-    //     })
+        $('.form__item.file').append(clone)
+        $(this).closest('.form__file').hide();
+        clone.find('input').attr('data-count', $('.form__file').length);
+        clone.find('input').attr('name', 'file['+ $('.form__file').length +']');
         
-    // })
+    })
 
     //удаление файлов
 
-    // $('.form__item.file').click(function(evt) {
-    //     let target = evt.target;
-    //     if ($(target).hasClass('delete')) {
-    //         console.log($(target).parent().index())
-    //         //$(target).parent().remove();
+    $('.form').on('click', '.delete', function() {
+        let fileItem = $(this).parent();
+        let fileItemCount = fileItem.attr('data-count');
 
-    //         delete FileList[$(target).parent().index()]
-    //         console.log($('input[name="files"]').get(0).files)
-    //     }
-        
-    // })
+        $('input[data-count="'+ fileItemCount +'"]').val("");
+        fileItem.hide();        
+    })
 
     //=====Показ имени файлов КОНЕЦ=======
 });
