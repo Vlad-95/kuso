@@ -167,50 +167,67 @@ $(document).ready(function() {
             }
 
         });
+
+        $('.intro .btns').on('click', '.btns__item', function () {
+            let tab = $(this).attr('data-tab');
+
+            if (tab) {
+                $('.feedback .tabs .tabs__item[data-tab="'+ tab +'"]').addClass('active').siblings().removeClass('active');
+
+                if (tab == "feedback_visit") {
+                    $('.form__item[data-tab="feedback_message"]').hide().find('input, textarea').prop('disabled', true);
+                    $('.form__item[data-tab="feedback_visit"]').show().find('input, textarea').prop('disabled', false);
+                } else if (tab == "feedback_message") {
+                    $('.form__item[data-tab="feedback_visit"]').hide().find('input, textarea').prop('disabled', true);
+                    $('.form__item[data-tab="feedback_message"]').show().find('input, textarea').prop('disabled', false);
+                }
+            }
+            
+        })
     }
     //=====Табы в свяжитесь с нами КОНЕЦ======
 
 
     //=====Показ имени файлов========
-    $('input[name="files"]').bind('change', function() {
+    // $('input[name="files"]').bind('change', function() {
         
-        let filesName = [];
-        $('.files-list__item').remove();
+    //     let filesName = [];
+    //     $('.files-list__item').remove();
 
-        console.log($(this).get(0).files)
+    //     console.log($(this).get(0).files)
 
-        for(var i = 0; i < $(this).get(0).files.length; ++i) { // Запускаем цикл и перебираем все файлы
-            filesName.push($(this).get(0).files[i].name); // Добавляем имена файлов в массив
-        } 
+    //     for(var i = 0; i < $(this).get(0).files.length; ++i) { // Запускаем цикл и перебираем все файлы
+    //         filesName.push($(this).get(0).files[i].name); // Добавляем имена файлов в массив
+    //     } 
 
         
-        filesName.forEach(function(item, index, array) {
-            let fileElement = $(document.createElement('div'));
-            let fileElementDel = $(document.createElement('div'));
+    //     filesName.forEach(function(item, index, array) {
+    //         let fileElement = $(document.createElement('div'));
+    //         let fileElementDel = $(document.createElement('div'));
 
-            fileElement.addClass('files-list__item');
-            fileElementDel.addClass('delete');
+    //         fileElement.addClass('files-list__item');
+    //         fileElementDel.addClass('delete');
 
-            fileElement.text(item)
-            $('.files-list').append(fileElement);
-            fileElement.append(fileElementDel);
-        })
+    //         fileElement.text(item)
+    //         $('.files-list').append(fileElement);
+    //         fileElement.append(fileElementDel);
+    //     })
         
-    })
+    // })
 
     //удаление файлов
 
-    $('.form__item.file').click(function(evt) {
-        let target = evt.target;
-        if ($(target).hasClass('delete')) {
-            console.log($(target).parent().index())
-            //$(target).parent().remove();
+    // $('.form__item.file').click(function(evt) {
+    //     let target = evt.target;
+    //     if ($(target).hasClass('delete')) {
+    //         console.log($(target).parent().index())
+    //         //$(target).parent().remove();
 
-            delete FileList[$(target).parent().index()]
-            console.log($('input[name="files"]').get(0).files)
-        }
+    //         delete FileList[$(target).parent().index()]
+    //         console.log($('input[name="files"]').get(0).files)
+    //     }
         
-    })
+    // })
 
     //=====Показ имени файлов КОНЕЦ=======
 });
