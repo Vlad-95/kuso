@@ -200,7 +200,7 @@ $(document).ready(function() {
 
     //=====Показ имени файлов========
     $('.form').on('change', 'input[type="file"]', function() {
-        console.log(1)
+        
         //$('.files-list__item').remove();
         let fileName = $(this)[0].files[0].name;
         let clone = $(this).closest('.form__file').clone();
@@ -218,9 +218,9 @@ $(document).ready(function() {
         
         $('.form__item.file').append(clone)
         $(this).closest('.form__file').hide();
+        clone.find('input').val('');
         clone.find('input').attr('data-count', $('.form__file').length);
-        clone.find('input').attr('name', 'file['+ $('.form__file').length +']');
-        
+        clone.find('input').attr('name', 'file['+ $('.form__file').length +']');        
     })
 
     //удаление файлов
