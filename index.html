@@ -684,38 +684,76 @@
                             <div class="tabs tabs_feedback">
                                 <div class="tabs__item active" data-tab="feedback_message">Сообщение</div>
                                 <div class="tabs__item" data-tab="feedback_visit">Визит на завод</div>
-                                <!-- <div class="tabs__item">Опросный лист</div> -->
+                                <div class="tabs__item" data-tab="question">Опросный лист</div>
                             </div>
                         </div>
 
+                        <div class="question-content" data-tab="question">
+                            <div class="links">
+                                <a href="javascript:;">Файл для скачивания</a>
+                                <a href="javascript:;">Файл для скачивания</a>
+                                <a href="javascript:;">Файл для скачивания</a>
+                                <a href="javascript:;">Файл для скачивания</a>
+                            </div>
+
+                            <div class="wysiwyg">
+                                <p>
+                                    Повышение качества жизни жителей России за счет обеспечения бесперебойного доступа к чистой и качественной воде. Повышение экологического благополучия территорий через внедрение современных технологий утилизации илового осадка. Повышение привлекательности регионов присутствия за счет развития комфортной городской среды.
+                                </p>
+                                <ol>
+                                    <li>РВК. Архангельск</li>
+                                    <li>РВК. Барнаул</li>
+                                    <li>РВК. Воронеж</li>
+                                    <li>РВК. Краснодар</li>
+                                    <li>РВК. Омск</li>
+                                    <li>РВК. Оренбург</li>
+                                    <li>РВК. Тюмень</li>
+                                    <li>РВК. Орск</li>
+                                </ol>
+                                <p>
+                                    Повышение качества жизни жителей России за счет обеспечения бесперебойного доступа к чистой и качественной воде. Повышение экологического благополучия территорий через внедрение современных технологий утилизации илового осадка. Повышение привлекательности регионов присутствия за счет развития комфортной городской среды.
+                                </p>
+                                <ul>
+                                    <li>Проектирование и изыскания</li>
+                                    <li>Строительство</li>
+                                    <li>Инжиниринг</li>
+                                    <li>Продажа оборудования</li>
+                                </ul>
+                            </div>
+                        </div>
 
                         <form action="" class="form">
                             <div class="form__wrap">
                                 <label class="form__item">
                                     <p class="form__item-name">ФИО*</p>
-                                    <input type="text" class="form__item-input error">
+                                    <input type="text" name="name" class="form__item-input error">
                                 </label>
 
                                 <div class="form__row">
                                     <label class="form__item">
                                         <p class="form__item-name">Телефон*</p>
-                                        <input type="text" class="form__item-input">
+                                        <input type="text" name="phone" class="form__item-input">
                                     </label>
 
                                     <label class="form__item">
                                         <p class="form__item-name">Email*</p>
-                                        <input type="text" class="form__item-input">
+                                        <input type="text" name="email" class="form__item-input">
                                     </label>
                                 </div>
 
                                 <label class="form__item" data-tab="feedback_message">
                                     <p class="form__item-name">Название организации или адрес*</p>
-                                    <input type="text" class="form__item-input">
+                                    <input type="text" name="org_name" class="form__item-input">
                                 </label>
-            
-                                <label class="form__item">
+
+                                <label class="form__item" data-tab="feedback_visit" style="display:none">
                                     <p class="form__item-name">Комментарий*</p>
-                                    <textarea name="" id="" class="form__item-comment error"></textarea>
+                                    <textarea name="comment" placeholder="Укажите желаемую дату, число участников и т.д." id="" class="form__item-comment"></textarea>
+                                </label>
+                    
+                                <label class="form__item" data-tab="feedback_message">
+                                    <p class="form__item-name">Ваш вопрос*</p>
+                                    <textarea name="comment" id="" class="form__item-comment"></textarea>
                                 </label>
 
                                 <div class="form__item file" data-tab="feedback_visit">

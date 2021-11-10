@@ -90,6 +90,109 @@
     }
 }
 
+.question-content {
+    display: none;
+    
+    .links {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        a {
+            text-decoration: underline;
+            font-size: 15px;
+            
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .wysiwyg {
+        p,
+        li {
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        p,
+        ul,
+        ol {
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            &.two-cols {
+                column-count: 2;
+            }
+
+            li {
+                position: relative;
+                padding-left: 41px;
+                
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                    width: 6px;
+                    height: 6px;
+                    background-color: @blue;
+                    border-radius: 100px;
+                }
+            }
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+            counter-reset: item;
+
+            &.two-cols {
+                column-count: 2;
+            }
+
+
+            li {
+                counter-increment: item;
+                position: relative;
+                padding-left: 41px;
+                
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+
+                &:before {
+                    content: counter(item)".";
+                    position: absolute;
+                    left: 8px;
+                    top: 0;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        table {
+            td {
+                border: 1px solid @blue;
+                padding: 10px;
+            }
+        }
+    }
+}
+
 .form {
 
     &__item {
@@ -131,6 +234,10 @@
             font-size: 15px;
             color: @blue;
             font-family: @PFBeau;
+
+            &::placeholder {
+                color: @blue;
+            }
 
             &.error {
                 border-color: red;

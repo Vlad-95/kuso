@@ -162,11 +162,18 @@ $(document).ready(function() {
 
             
             if ($(this).attr('data-tab') == "feedback_visit") {
-               $('.form__item[data-tab="feedback_message"]').hide().find('input, textarea').prop('disabled', true);
-               $('.form__item[data-tab="feedback_visit"]').show().find('input, textarea').prop('disabled', false);
+                $('.question-content').hide();
+                $('.form').show();
+                $('.form__item[data-tab="feedback_message"]').hide().find('input, textarea').prop('disabled', true);
+                $('.form__item[data-tab="feedback_visit"]').show().find('input, textarea').prop('disabled', false);
             } else if ($(this).attr('data-tab') == "feedback_message") {
+                $('.question-content').hide();
+                $('.form').show();
                 $('.form__item[data-tab="feedback_visit"]').hide().find('input, textarea').prop('disabled', true);
                 $('.form__item[data-tab="feedback_message"]').show().find('input, textarea').prop('disabled', false);
+            } else if ($(this).attr('data-tab') == "question") {
+                $('.form').hide();
+                $('.question-content').show();
             }
 
         });
