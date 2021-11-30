@@ -10,13 +10,27 @@
         text-align: center;
         width: calc(100% / 6);
 
-        .number {
-            fill: url(#p-fire);
-            stroke: #ffbe00;
-            stroke-width: 3;
-            stroke-opacity: 0.3;
-            font-size: 85px;
-            font-weight: 900;
+        // .number {
+        //     fill: url(#p-fire);
+        //     stroke: #ffbe00;
+        //     stroke-width: 3;
+        //     stroke-opacity: 0.3;
+        //     font-size: 85px;
+        //     font-weight: 900;
+        // }
+
+        .image {
+            background: url("../img/fire.gif");
+            background-position: center bottom -80px;
+            background-repeat: no-repeat;
+
+            .text {
+                background:#000;
+                mix-blend-mode:darken;
+                color: #fff;
+                font-size: 85px;
+                font-weight: 900;
+            }
         }
 
         .name {
@@ -62,10 +76,6 @@
             width: calc(100% / 3);
             margin-bottom: 30px;
 
-            .number {
-                font-size: 60px;
-            }
-
             .name {
                 margin: 0 0 12px;
             }
@@ -81,12 +91,8 @@
         &__item {
             width: 50%;
 
-            .number {
-                font-size: 40px;
-            }
-
             .name {
-                margin: -20px 0 12px;
+                margin: 0 0 12px;
             }
         }
         
@@ -99,7 +105,7 @@
             width: 100%;
 
             .name {
-                margin: -10px 0 12px;
+                margin: 0 0 12px;
             }
         }
     }

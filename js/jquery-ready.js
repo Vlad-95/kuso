@@ -198,6 +198,25 @@ $(document).ready(function() {
     //=====Табы в свяжитесь с нами КОНЕЦ======
 
 
+    //=====Показ ошибки, если файл большой=====
+    $('.form').on("change", "input[type='file']", function () {
+        if ($(this)[0].files[0]) {
+            let e = $(this)[0].files[0],
+                i = $('.files-list .error'),
+                t = Number((e.size / 1e6).toPrecision(2)),
+                o = Number($(this).attr("data-max-file-size"));
+
+            if (o && o < t) {
+                i.text($(this).data().fileIsTooBigMessage);
+                $(this).val("");
+            } else {
+                i.text("");
+            }
+        }
+    })
+
+    //=====
+
     //=====Показ имени файлов========
     $('.form').on('change', 'input[type="file"]', function() {
         
