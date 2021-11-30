@@ -10,6 +10,7 @@ yarn.lock
 /logs/*
 /tmp/*
 /vendor/*
+/img/video/*
 
 # App specific files #
 ######################
